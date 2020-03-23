@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EyeScanViewController.swift
 //  EyeScan
 //
 //  Created by Phil Stern on 3/23/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EyeScanViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

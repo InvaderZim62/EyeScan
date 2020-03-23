@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A7F5415242966A600B5F54A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F5414242966A600B5F54A /* AppDelegate.swift */; };
 		4A7F5417242966A600B5F54A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F5416242966A600B5F54A /* SceneDelegate.swift */; };
-		4A7F5419242966A600B5F54A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F5418242966A600B5F54A /* ViewController.swift */; };
+		4A7F5419242966A600B5F54A /* EyeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F5418242966A600B5F54A /* EyeScanViewController.swift */; };
 		4A7F541C242966A600B5F54A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7F541A242966A600B5F54A /* Main.storyboard */; };
 		4A7F541E242966A600B5F54A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7F541D242966A600B5F54A /* Assets.xcassets */; };
 		4A7F5421242966A600B5F54A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7F541F242966A600B5F54A /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		4A7F5411242966A600B5F54A /* EyeScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyeScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7F5414242966A600B5F54A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A7F5416242966A600B5F54A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4A7F5418242966A600B5F54A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4A7F5418242966A600B5F54A /* EyeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeScanViewController.swift; sourceTree = "<group>"; };
 		4A7F541B242966A600B5F54A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A7F541D242966A600B5F54A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A7F5420242966A600B5F54A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +56,23 @@
 		4A7F5413242966A600B5F54A /* EyeScan */ = {
 			isa = PBXGroup;
 			children = (
-				4A7F5414242966A600B5F54A /* AppDelegate.swift */,
-				4A7F5416242966A600B5F54A /* SceneDelegate.swift */,
-				4A7F5418242966A600B5F54A /* ViewController.swift */,
 				4A7F541A242966A600B5F54A /* Main.storyboard */,
-				4A7F541D242966A600B5F54A /* Assets.xcassets */,
-				4A7F541F242966A600B5F54A /* LaunchScreen.storyboard */,
+				4A7F5418242966A600B5F54A /* EyeScanViewController.swift */,
+				4A7F5428242966BD00B5F54A /* Supporting Files */,
 				4A7F5422242966A600B5F54A /* Info.plist */,
 			);
 			path = EyeScan;
+			sourceTree = "<group>";
+		};
+		4A7F5428242966BD00B5F54A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A7F5414242966A600B5F54A /* AppDelegate.swift */,
+				4A7F5416242966A600B5F54A /* SceneDelegate.swift */,
+				4A7F541D242966A600B5F54A /* Assets.xcassets */,
+				4A7F541F242966A600B5F54A /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A7F5419242966A600B5F54A /* ViewController.swift in Sources */,
+				4A7F5419242966A600B5F54A /* EyeScanViewController.swift in Sources */,
 				4A7F5415242966A600B5F54A /* AppDelegate.swift in Sources */,
 				4A7F5417242966A600B5F54A /* SceneDelegate.swift in Sources */,
 			);
@@ -287,6 +295,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65Z9KA7SHC;
 				INFOPLIST_FILE = EyeScan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +314,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65Z9KA7SHC;
 				INFOPLIST_FILE = EyeScan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
