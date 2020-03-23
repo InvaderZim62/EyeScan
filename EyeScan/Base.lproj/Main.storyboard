@@ -44,6 +44,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="0Bd-J9-VOB" id="kPE-D4-ybx"/>
+                        <outlet property="scrollView" destination="zIc-7T-gOk" id="oDs-vR-pH5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
