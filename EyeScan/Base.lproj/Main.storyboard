@@ -32,13 +32,29 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="3Rz-Rp-pdk"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="g0d-WZ-x1h"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3Z-4T-18y">
+                                <rect key="frame" x="0.0" y="0.0" width="186" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSL-P0-2mG">
+                                <rect key="frame" x="190" y="0.0" width="185" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="zIc-7T-gOk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1Nv-YA-pYJ"/>
+                            <constraint firstItem="kSL-P0-2mG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2Kx-Xr-iaf"/>
+                            <constraint firstItem="m3Z-4T-18y" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.496" id="GpQ-cF-chS"/>
+                            <constraint firstItem="m3Z-4T-18y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OaR-p3-j5a"/>
+                            <constraint firstItem="m3Z-4T-18y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aX9-lh-AK3"/>
+                            <constraint firstItem="kSL-P0-2mG" firstAttribute="leading" secondItem="m3Z-4T-18y" secondAttribute="trailing" constant="4" id="fyi-sV-9lP"/>
+                            <constraint firstItem="kSL-P0-2mG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="i2D-7X-GgV"/>
                             <constraint firstItem="zIc-7T-gOk" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="iuw-KQ-ATd"/>
                             <constraint firstItem="zIc-7T-gOk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kp4-kb-QGh"/>
+                            <constraint firstItem="kSL-P0-2mG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lLx-kN-lwS"/>
                             <constraint firstItem="zIc-7T-gOk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nTR-Ae-OIG"/>
+                            <constraint firstItem="m3Z-4T-18y" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zau-f5-CIr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
