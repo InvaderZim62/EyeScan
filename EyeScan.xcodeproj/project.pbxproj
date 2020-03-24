@@ -13,6 +13,7 @@
 		4A7F541C242966A600B5F54A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7F541A242966A600B5F54A /* Main.storyboard */; };
 		4A7F541E242966A600B5F54A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7F541D242966A600B5F54A /* Assets.xcassets */; };
 		4A7F5421242966A600B5F54A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7F541F242966A600B5F54A /* LaunchScreen.storyboard */; };
+		4A7F542A2429959400B5F54A /* FocalPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F54292429959400B5F54A /* FocalPointView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4A7F541D242966A600B5F54A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A7F5420242966A600B5F54A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A7F5422242966A600B5F54A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A7F54292429959400B5F54A /* FocalPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocalPointView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				4A7F541A242966A600B5F54A /* Main.storyboard */,
 				4A7F5418242966A600B5F54A /* EyeScanViewController.swift */,
+				4A7F54292429959400B5F54A /* FocalPointView.swift */,
 				4A7F5428242966BD00B5F54A /* Supporting Files */,
 				4A7F5422242966A600B5F54A /* Info.plist */,
 			);
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A7F5419242966A600B5F54A /* EyeScanViewController.swift in Sources */,
+				4A7F542A2429959400B5F54A /* FocalPointView.swift in Sources */,
 				4A7F5415242966A600B5F54A /* AppDelegate.swift in Sources */,
 				4A7F5417242966A600B5F54A /* SceneDelegate.swift in Sources */,
 			);
