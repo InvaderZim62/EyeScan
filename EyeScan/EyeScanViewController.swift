@@ -10,7 +10,7 @@ import UIKit
 
 struct Constants {
     static let scrollDuration = 1.2  // seconds to scroll in one direction
-    static let showImage = true  // true for debugging
+    static let showImage = false  // true for debugging
 }
 
 enum PointState: Int {
