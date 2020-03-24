@@ -9,6 +9,8 @@
 import UIKit
 
 class FocalPointView: UIView {
+    
+    var color = UIColor.gray { didSet { setNeedsDisplay() } }
 
     override func draw(_ rect: CGRect) {
         backgroundColor = UIColor.clear
@@ -19,7 +21,7 @@ class FocalPointView: UIView {
                                   startAngle: 0.0,
                                   endAngle: 2.0 * CGFloat.pi,
                                   clockwise: true)
-        UIColor.gray.setFill()
+        color.setFill()
         circle.fill()
     }
 }

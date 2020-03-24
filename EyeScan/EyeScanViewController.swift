@@ -10,17 +10,27 @@ import UIKit
 
 struct Constants {
     static let scrollDuration = 1.2  // seconds to scroll in one direction
+    static let showImage = true  // true for debugging
+}
+
+enum PointState: Int {
+    case noPoints
+    case greenPoint
+    case redPoint
+    case bothPoints
 }
 
 class EyeScanViewController: UIViewController {
     
     let imageView = UIImageView()
-    let focalPointView = FocalPointView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+    let greenPointView = FocalPointView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+    let redPointView = FocalPointView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+    var pointState = PointState.bothPoints
     var rightPosition = CGPoint()
     var leftPosition = CGPoint()
     
-    @IBOutlet weak var leftBlockView: UIView!  // pws: delete these after tesing
     @IBOutlet weak var rightBlockView: UIView!
+    @IBOutlet weak var leftBlockView: UIView!
     
     override var prefersStatusBarHidden: Bool { return true }
     
@@ -29,18 +39,21 @@ class EyeScanViewController: UIViewController {
         imageView.image = UIImage(named: "canyon")
         imageView.sizeToFit()
         view.addSubview(imageView)
-        view.addSubview(focalPointView)
-        focalPointView.layer.zPosition = 2
-        leftBlockView.layer.zPosition = 1  // place blocks between imageView and focalPointView
+        
+        greenPointView.color = UIColor(displayP3Red: 0, green: 0.5, blue: 0, alpha: 1)
+        greenPointView.layer.zPosition = 2
+        view.addSubview(greenPointView)
+        
+        redPointView.color = UIColor(displayP3Red: 0.5, green: 0, blue: 0, alpha: 1)
+        redPointView.layer.zPosition = 2
+        view.addSubview(redPointView)
+        
         rightBlockView.layer.zPosition = 1
-//        leftBlockView.backgroundColor = UIColor.clear  // pws: make clear during testing
-//        rightBlockView.backgroundColor = UIColor.clear
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        UIScreen.main.brightness = 1.0  // full brightness (must reset brightness manually)
-        moveViewBackAndForth(imageView)
-        moveViewBackAndForth(focalPointView)
+        leftBlockView.layer.zPosition = 1  // place blocks between imageView and point views
+        if Constants.showImage {
+            rightBlockView.backgroundColor = UIColor.clear
+            leftBlockView.backgroundColor = UIColor.clear
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -49,32 +62,57 @@ class EyeScanViewController: UIViewController {
         rightPosition = CGPoint(x: percentScreen * view.frame.width, y: view.frame.midY)
         leftPosition = CGPoint(x: (1 - percentScreen) * view.frame.width, y: view.frame.midY)
         imageView.center = rightPosition
-        focalPointView.center = rightPosition
+        greenPointView.center = rightPosition
+        redPointView.center = leftPosition
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        UIScreen.main.brightness = 1.0  // full brightness (must reset brightness manually)
+        moveViewBackAndForth(imageView, rightToLeft: false)
+        moveViewBackAndForth(greenPointView, rightToLeft: false)
+        moveViewBackAndForth(redPointView, rightToLeft: true)
     }
     
-    private func moveViewBackAndForth(_ view: UIView) {
+    private func moveViewBackAndForth(_ view: UIView, rightToLeft: Bool) {
         UIView.transition(with: view,
                           duration: Constants.scrollDuration,
                           options: [],
                           animations: {
-                            view.center = self.leftPosition
+                            view.center = rightToLeft ? self.rightPosition : self.leftPosition
         },
                           completion: { _ in
                             UIView.transition(with: view,
                                               duration: Constants.scrollDuration,
                                               options: [],
                                               animations: {
-                                                view.center = self.rightPosition
+                                                view.center = rightToLeft ? self.leftPosition : self.rightPosition
                             },
                                               completion: { _ in
-                                                self.moveViewBackAndForth(view)
+                                                self.moveViewBackAndForth(view, rightToLeft: rightToLeft)
                             })
 
         })
     }
-    
+
     @IBAction func screenTapped(_ sender: UITapGestureRecognizer) {
-        focalPointView.isHidden = !focalPointView.isHidden
+        switch pointState {
+        case .noPoints:
+            pointState = .bothPoints
+            greenPointView.isHidden = false
+            redPointView.isHidden = false
+        case .bothPoints:
+            pointState = .greenPoint
+            greenPointView.isHidden = false
+            redPointView.isHidden = true
+        case .greenPoint:
+            pointState = .redPoint
+            greenPointView.isHidden = true
+            redPointView.isHidden = false
+        case .redPoint:
+            pointState = .noPoints
+            greenPointView.isHidden = true
+            redPointView.isHidden = true
+        }
     }
 }
 
