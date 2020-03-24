@@ -19,7 +19,7 @@ class FocalPointView: UIView {
                                   startAngle: 0.0,
                                   endAngle: 2.0 * CGFloat.pi,
                                   clockwise: true)
-        UIColor.black.setFill()
+        UIColor.gray.setFill()
         circle.fill()
     }
 }

@@ -18,20 +18,20 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3Z-4T-18y">
                                 <rect key="frame" x="0.0" y="0.0" width="331" height="375"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSL-P0-2mG">
-                                <rect key="frame" x="335" y="0.0" width="332" height="375"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="331.5" y="0.0" width="335.5" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="kSL-P0-2mG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2Kx-Xr-iaf"/>
                             <constraint firstItem="m3Z-4T-18y" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.496" id="GpQ-cF-chS"/>
                             <constraint firstItem="m3Z-4T-18y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OaR-p3-j5a"/>
                             <constraint firstItem="m3Z-4T-18y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aX9-lh-AK3"/>
-                            <constraint firstItem="kSL-P0-2mG" firstAttribute="leading" secondItem="m3Z-4T-18y" secondAttribute="trailing" constant="4" id="fyi-sV-9lP"/>
+                            <constraint firstItem="kSL-P0-2mG" firstAttribute="leading" secondItem="m3Z-4T-18y" secondAttribute="trailing" constant="0.5" id="fyi-sV-9lP"/>
                             <constraint firstItem="kSL-P0-2mG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="i2D-7X-GgV"/>
                             <constraint firstItem="kSL-P0-2mG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lLx-kN-lwS"/>
                             <constraint firstItem="m3Z-4T-18y" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zau-f5-CIr"/>

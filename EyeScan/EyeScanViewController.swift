@@ -9,16 +9,15 @@
 import UIKit
 
 struct Constants {
-    static let scrollDuration = 1.0  // seconds to scroll in one direction
+    static let scrollDuration = 1.2  // seconds to scroll in one direction
 }
 
 class EyeScanViewController: UIViewController {
     
-    lazy var focalPointView = FocalPointView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-    lazy var initialImagePosition = CGPoint(x: view.frame.width, y: view.frame.midY)  // center of image on right edge of screen
-    lazy var finalImagePosition = CGPoint(x: 0, y: view.frame.midY)  // center of image on left edge of screen
-
-    var imageView = UIImageView()
+    let imageView = UIImageView()
+    let focalPointView = FocalPointView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+    var rightPosition = CGPoint()
+    var leftPosition = CGPoint()
     
     @IBOutlet weak var leftBlockView: UIView!  // pws: delete these after tesing
     @IBOutlet weak var rightBlockView: UIView!
@@ -29,11 +28,11 @@ class EyeScanViewController: UIViewController {
         imageView.sizeToFit()
         view.addSubview(focalPointView)
         view.addSubview(imageView)
-
+        leftBlockView.layer.zPosition = 1  // place blocks between imageView and focalPointView
+        rightBlockView.layer.zPosition = 1
+        focalPointView.layer.zPosition = 2
 //        leftBlockView.backgroundColor = UIColor.clear  // pws: make clear during testing
 //        rightBlockView.backgroundColor = UIColor.clear
-        leftBlockView.layer.zPosition = 1  // place between imageView and focalPointView
-        rightBlockView.layer.zPosition = 1
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,19 +43,28 @@ class EyeScanViewController: UIViewController {
         moveViewBackAndForth(focalPointView)
     }
     
+    override func viewDidLayoutSubviews() {
+        var percentScreen: CGFloat = 0.9  // width of screen used by focalPointView
+        if view.frame.width < 500 { percentScreen = 1.0 }
+        rightPosition = CGPoint(x: percentScreen * view.frame.width, y: view.frame.midY)
+        leftPosition = CGPoint(x: (1 - percentScreen) * view.frame.width, y: view.frame.midY)
+        imageView.center = rightPosition
+        focalPointView.center = rightPosition
+    }
+    
     func moveViewBackAndForth(_ view: UIView) {
         UIView.transition(with: view,
                           duration: Constants.scrollDuration,
                           options: [],
                           animations: {
-                            view.center = self.finalImagePosition
+                            view.center = self.leftPosition
         },
                           completion: { _ in
                             UIView.transition(with: view,
                                               duration: Constants.scrollDuration,
                                               options: [],
                                               animations: {
-                                                view.center = self.initialImagePosition
+                                                view.center = self.rightPosition
                             },
                                               completion: { _ in
                                                 self.moveViewBackAndForth(view)
