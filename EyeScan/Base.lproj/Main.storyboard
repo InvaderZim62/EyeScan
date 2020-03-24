@@ -19,10 +19,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3Z-4T-18y">
                                 <rect key="frame" x="0.0" y="0.0" width="331" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="60h-GY-0lk" appends="YES" id="ka1-fF-I1J"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSL-P0-2mG">
                                 <rect key="frame" x="331.5" y="0.0" width="335.5" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="sAP-8j-1YH" appends="YES" id="bDt-5R-0On"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -44,6 +52,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="60h-GY-0lk">
+                    <connections>
+                        <action selector="screenTapped:" destination="BYZ-38-t0r" id="8Az-GU-ZDf"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="sAP-8j-1YH">
+                    <connections>
+                        <action selector="screenTapped:" destination="BYZ-38-t0r" id="zQR-ZL-TTf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="138.0809595202399" y="135.19999999999999"/>
         </scene>

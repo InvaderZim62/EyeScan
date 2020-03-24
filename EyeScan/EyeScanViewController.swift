@@ -72,5 +72,9 @@ class EyeScanViewController: UIViewController {
 
         })
     }
+    
+    @IBAction func screenTapped(_ sender: UITapGestureRecognizer) {
+        focalPointView.isHidden = !focalPointView.isHidden
+    }
 }
 
