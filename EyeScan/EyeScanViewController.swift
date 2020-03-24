@@ -36,9 +36,7 @@ class EyeScanViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        imageView.center = initialImagePosition
-        focalPointView.center = initialImagePosition
-        focalPointView.layer.zPosition = 2
+        UIScreen.main.brightness = 1.0  // must reset brightness manually, after app exits
         moveViewBackAndForth(imageView)
         moveViewBackAndForth(focalPointView)
     }
