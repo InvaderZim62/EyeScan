@@ -14,7 +14,7 @@ struct Constants {
 
 class EyeScanViewController: UIViewController {
     
-    lazy var focalPointView = FocalPointView(frame: CGRect(x: imageView.frame.midX, y: imageView.frame.midY, width: 10, height: 10))
+    lazy var focalPointView = FocalPointView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
     lazy var initialImagePosition = CGPoint(x: view.frame.width, y: view.frame.midY)  // center of image on right edge of screen
     lazy var finalImagePosition = CGPoint(x: 0, y: view.frame.midY)  // center of image on left edge of screen
 
@@ -26,36 +26,40 @@ class EyeScanViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: "canyon")
-        imageView.sizeToFit()  // pws: needed?
-        imageView.addSubview(focalPointView)
+        imageView.sizeToFit()
+        view.addSubview(focalPointView)
         view.addSubview(imageView)
+
+//        leftBlockView.backgroundColor = UIColor.clear  // pws: make clear during testing
+//        rightBlockView.backgroundColor = UIColor.clear
+        leftBlockView.layer.zPosition = 1  // place between imageView and focalPointView
+        rightBlockView.layer.zPosition = 1
     }
     
     override func viewDidAppear(_ animated: Bool) {
         imageView.center = initialImagePosition
-        leftBlockView.backgroundColor = UIColor.clear  // pws: make clear during testing
-        rightBlockView.backgroundColor = UIColor.clear
-        leftBlockView.layer.zPosition = 1
-        rightBlockView.layer.zPosition = 1
-        moveImageBackAndForth()
+        focalPointView.center = initialImagePosition
+        focalPointView.layer.zPosition = 2
+        moveViewBackAndForth(imageView)
+        moveViewBackAndForth(focalPointView)
     }
     
-    func moveImageBackAndForth() {
-        UIView.transition(with: imageView,
+    func moveViewBackAndForth(_ view: UIView) {
+        UIView.transition(with: view,
                           duration: Constants.scrollDuration,
                           options: [],
                           animations: {
-                            self.imageView.center = self.finalImagePosition
+                            view.center = self.finalImagePosition
         },
                           completion: { _ in
-                            UIView.transition(with: self.imageView,
+                            UIView.transition(with: view,
                                               duration: Constants.scrollDuration,
                                               options: [],
                                               animations: {
-                                                self.imageView.center = self.initialImagePosition
+                                                view.center = self.initialImagePosition
                             },
                                               completion: { _ in
-                                                self.moveImageBackAndForth()
+                                                self.moveViewBackAndForth(view)
                             })
 
         })
