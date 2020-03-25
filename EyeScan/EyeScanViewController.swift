@@ -9,11 +9,11 @@
 import UIKit
 
 struct Constants {
-    static let scrollDuration = 1.2  // seconds to scroll in one direction
+    static let pointTransitionDuration = 1.2  // seconds to transition in one direction
     static let showImage = false  // true for debugging
 }
 
-enum PointState: Int {
+enum PointsType: Int {
     case noPoints
     case greenPoint
     case redPoint
@@ -25,8 +25,8 @@ class EyeScanViewController: UIViewController {
     let imageView = UIImageView()
     let greenPointView = FocalPointView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
     let redPointView = FocalPointView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-    var pointState = PointState.bothPoints
-    var rightPosition = CGPoint()
+    var pointsType = PointsType.bothPoints
+    var rightPosition = CGPoint()  // points transition back and forth between these two positions
     var leftPosition = CGPoint()
     
     @IBOutlet weak var rightBlockView: UIView!
@@ -75,14 +75,14 @@ class EyeScanViewController: UIViewController {
     
     private func moveViewBackAndForth(_ view: UIView, rightToLeft: Bool) {
         UIView.transition(with: view,
-                          duration: Constants.scrollDuration,
+                          duration: Constants.pointTransitionDuration,
                           options: [],
                           animations: {
                             view.center = rightToLeft ? self.rightPosition : self.leftPosition
         },
                           completion: { _ in
                             UIView.transition(with: view,
-                                              duration: Constants.scrollDuration,
+                                              duration: Constants.pointTransitionDuration,
                                               options: [],
                                               animations: {
                                                 view.center = rightToLeft ? self.leftPosition : self.rightPosition
@@ -95,21 +95,21 @@ class EyeScanViewController: UIViewController {
     }
 
     @IBAction func screenTapped(_ sender: UITapGestureRecognizer) {
-        switch pointState {
+        switch pointsType {  // tapping screen cyces through the different points types
         case .noPoints:
-            pointState = .bothPoints
+            pointsType = .bothPoints
             greenPointView.isHidden = false
             redPointView.isHidden = false
         case .bothPoints:
-            pointState = .greenPoint
+            pointsType = .greenPoint
             greenPointView.isHidden = false
             redPointView.isHidden = true
         case .greenPoint:
-            pointState = .redPoint
+            pointsType = .redPoint
             greenPointView.isHidden = true
             redPointView.isHidden = false
         case .redPoint:
-            pointState = .noPoints
+            pointsType = .noPoints
             greenPointView.isHidden = true
             redPointView.isHidden = true
         }
