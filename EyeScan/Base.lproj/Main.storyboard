@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="landscape" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="EyeScanViewController" customModule="EyeScan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m3Z-4T-18y">
-                                <rect key="frame" x="0.0" y="0.0" width="331" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="444.5" height="414"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -25,7 +26,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSL-P0-2mG">
-                                <rect key="frame" x="331.5" y="0.0" width="335.5" height="375"/>
+                                <rect key="frame" x="445" y="0.0" width="451" height="414"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -33,18 +34,18 @@
                                 </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="kSL-P0-2mG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2Kx-Xr-iaf"/>
-                            <constraint firstItem="m3Z-4T-18y" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.496" id="GpQ-cF-chS"/>
-                            <constraint firstItem="m3Z-4T-18y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OaR-p3-j5a"/>
+                            <constraint firstItem="kSL-P0-2mG" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="2Kx-Xr-iaf"/>
+                            <constraint firstItem="m3Z-4T-18y" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.496" id="GpQ-cF-chS"/>
+                            <constraint firstItem="m3Z-4T-18y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OaR-p3-j5a"/>
                             <constraint firstItem="m3Z-4T-18y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aX9-lh-AK3"/>
                             <constraint firstItem="kSL-P0-2mG" firstAttribute="leading" secondItem="m3Z-4T-18y" secondAttribute="trailing" constant="0.5" id="fyi-sV-9lP"/>
-                            <constraint firstItem="kSL-P0-2mG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="i2D-7X-GgV"/>
+                            <constraint firstItem="kSL-P0-2mG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="i2D-7X-GgV"/>
                             <constraint firstItem="kSL-P0-2mG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lLx-kN-lwS"/>
-                            <constraint firstItem="m3Z-4T-18y" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zau-f5-CIr"/>
+                            <constraint firstItem="m3Z-4T-18y" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="zau-f5-CIr"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="leftBlockView" destination="m3Z-4T-18y" id="Ig5-Zt-Bw4"/>
@@ -66,4 +67,9 @@
             <point key="canvasLocation" x="138.0809595202399" y="135.19999999999999"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
