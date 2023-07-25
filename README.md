@@ -1,4 +1,4 @@
-# EyeScan
+# Eye Scan
 
 I read an article about a person at a museum that was looking around, and suddenly saw a picture
 floating in the room.  When they looked back, the picture was gone.
@@ -14,3 +14,5 @@ I was intrigued by this, so I created a simple demo app to demonstrate the effec
 Hold your phone about a foot from your face, and watch one of the colored dots move back and forth.
 Keep you head still and just follow with your eyes.  If you follow the green dot, the image points
 to the right.  If you follow the red dot, the image points to the left.
+
+![Eye Scan](https://github.com/InvaderZim62/EyeScan/assets/34785252/2c548cb4-058c-482d-962d-89be1c5e1815)
